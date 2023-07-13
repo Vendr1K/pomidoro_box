@@ -1,0 +1,114 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 165px;
+    border: 1px solid var(--border);
+    padding: 6px 0;
+    background-color: var(--color-white);
+    position: relative;
+    z-index: 10;
+
+    &::before {
+        position: absolute;
+        content: '';
+        border-bottom: 7px solid var(--border);
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100%;
+        z-index: 100;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        border-bottom: 6px solid var(--color-white);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 100%;
+        z-index: 100;
+    }
+
+    &__btn {
+        background-color: var(--color-white);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 9px 0px 9px 15px;
+        &:hover {
+            background-color: var(--gray-color);
+        }
+        &:focus{
+            outline: none;
+            background-color: var(--gray-color);
+        }
+
+        &:active{
+            background-color: var(--border);
+        }
+
+        &_icon {
+            margin-right: 8px;
+        }
+
+        &_descr {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 17px;
+            color: var(--placeholder);
+        }
+
+    }
+}
+
+.modal__remove_task {
+    &__header{
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        color: var(--color-text);
+        margin-bottom: 25px;
+    }
+
+    &__btn_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__delete {
+            background-color: var(--red-color);
+            color: var(--color-white);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 17px;
+            margin-bottom: 10px;
+            transform: background-color .2s ease;
+
+            &:hover {
+                background-color: var(--marker-color);
+                transform: background-color .2s ease;
+            }
+        }
+
+        &__cancel{
+            color: var(--color-text);
+            width: fit-content;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 17px;
+            border-bottom: 1px solid var(--color-text);
+        
+        }
+    }
+}

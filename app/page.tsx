@@ -1,8 +1,11 @@
 // import Image from 'next/image'
 // import styles from './page.module.css'
 
-export default function Home() {
+import Home from "@/components/Home/Home";
+import { Statistic } from "@/components/Statistic/Statistic";
+
+export default function HomePage() {
   return (
-   <div>Hello world!</div>
+    <Home/>
   )
 }

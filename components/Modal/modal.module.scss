@@ -1,0 +1,68 @@
+.modalScreen {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #00000080; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1000;
+  
+  }
+  
+  .modal {
+    position: relative;
+    min-width: 350px;
+    padding: 35px 105px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-white);
+    margin:0 30px;
+    border-radius: 7px;
+    z-index: 1000;
+
+    @media all and (max-width: 1200px) {
+      padding: 45px;
+    }
+
+    @media all and (max-width: 768px) {
+      padding: 30px;
+    }
+
+    &__close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      color: #939cb0;
+      border-bottom: 1px solid #7d8596;
+      transition: color 0.2s ease, border 0.2s ease;
+
+      &:hover {
+        color: #7d8596;
+        border-color:#7d8596;
+        transition: color 0.2s ease, border 0.2s ease;
+      }
+
+      @media all and (max-width: 1200px) {
+        top: 10px;
+        right: 10px;
+        font-size: 14px;
+      }
+
+      @media all and (max-width: 768px) {
+        top: 5px;
+        right: 10px;
+        font-size: 12px;
+      }
+      
+    }
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aliceblue;
+  }

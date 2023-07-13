@@ -1,0 +1,47 @@
+.statistic_footer {
+    width: 100%;
+
+    &__list {
+        list-style: none;
+        width: 100%;
+        display: grid;  
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+
+        &__item {
+            padding: 25px;
+            background-color: var(--gray-color);
+
+            &__wrapper{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+
+                &__descr {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+
+                    &__title {
+                        margin-bottom: 20px;
+                        color: var(--color-text);
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 33px;
+                    }
+                    &__text {
+                        color: var(--color-text);
+                        font-size: 64px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+                }
+            }
+            
+        }
+    }
+}

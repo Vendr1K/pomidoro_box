@@ -108,6 +108,24 @@ a {
   cursor: pointer;
 }
 
+.btn-pomidoro {
+  padding: 19px 50px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17px;
+  border: 1px solid var(--red-color);
+}
+
 :root {
   --red-color: #DC3E22;
+  --marker-color: #B7280F;
+  --color-white: #ffffff;
+  --color-text: #333;
+  --gray-color: #F4F4F4;
+  --green-color: #A8B64F;
+  --green-hover: #899441;
+  --placeholder: #999;
+  --border: #E4E4E4;
+  --border-circle: #C4C4C4;
+  --pause-task-color: #ffff8b;
 }

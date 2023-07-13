@@ -1,0 +1,127 @@
+.timer {
+    background-color: var(--gray-color);
+    height: 500px;
+
+    &__task__wrapper__header{ 
+        padding: 20px 40px;
+        display: flex;
+        width: 100%;
+        margin-bottom: 70px;
+        justify-content: space-between;
+        min-height: 55px;
+        background-color: var(--border-circle);
+        color: var(--color-white);
+
+        &__task {
+            color: var(--color-white);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 17px;
+        }
+        &__number {
+            color: var(--color-white);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 17px;
+        }
+    }
+
+
+    &__time_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        &__time {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-text);
+            font-size: 150px;
+            font-style: normal;
+            font-weight: 200;
+            line-height: normal;
+
+            &__btn_setting{
+                position: absolute;
+                right: -25%;
+                transition: fill .3s ease;
+
+                &:disabled {
+                    pointer-events: none;
+                    svg g{
+                        opacity: 0.6;
+                    }
+                }
+                
+                &:hover svg g{
+                    fill: var(--green-hover);
+                    transition: fill .3s ease;
+                }
+            }
+
+            
+        }
+
+        &__buttons {
+            margin-top: 30px;
+            :first-child {
+                margin-right: 25px;
+            }
+        }
+
+        &__button{
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 17px;
+
+            &_start,
+            &_pause,
+            &_continue{
+                background-color: var(--green-color);
+                color: var(--color-white);
+                border: 2px solid transparent;
+                transition: background-color .2s ease;
+
+                &:hover {
+                    background-color: var(--green-hover);
+                    transition: background-color .2s ease;
+                }
+
+                &:disabled {
+                    opacity: 0.6;
+                    pointer-events: none;
+                }
+            }
+
+
+            &_stop,
+            &_complited,
+            &_skip{
+                background-color: transparent;
+                color: var(--red-color);
+                border: 2px solid var(--red-color);
+                transition: background-color .2s ease, color .2s ease, border .2s ease;
+                &:hover {
+                    background-color: var(--marker-color);
+                    color: var(--color-white);
+                    border: 2px solid transparent;
+                    transition: background-color .2s ease, color .2s ease, border .2s ease;
+                }
+              
+
+                &:disabled {
+                    border-color: var(--border-circle);
+                    color: var(--border-circle);
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

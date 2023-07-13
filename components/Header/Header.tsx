@@ -9,14 +9,12 @@ export default function Header() {
         
         <Link  className={styles.header__wrapper_left} href='/'>
             <Icon name={EIcons.tomato} className={styles.header__wrapper_left__icon}/>
-            <h1 className={styles.header__wrapper_left__title}>Pomidoro_box </h1>
+            <h1 className={styles.header__wrapper_left__title}>Pomodoro_box </h1>
         </Link>
         <Link className={styles.header__wrapper_right} href='/stats'>
             <Icon name={EIcons.stats} className={styles.header__wrapper_right__icon}/>
             <span className={styles.header__wrapper_right__descr}>Статистика</span>
         </Link>
-        
-        
     </header>
   )
 }
