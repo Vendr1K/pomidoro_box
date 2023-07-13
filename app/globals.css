@@ -93,6 +93,14 @@ body {
   max-width: 1440px;
   padding: 0 80px;
   margin: 0 auto;
+
+  @media all and (max-width: 1366px) {
+    padding: 0 40px;
+  }
+
+  @media all and (max-width: 576px) {
+    padding: 0 15px;
+  }
 }
 
 

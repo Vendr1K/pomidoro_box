@@ -162,7 +162,16 @@ export function useTimer() {
             // }))
           
         } else {
-          dispatch(decrementTask({...task, count: task.count - 1}))
+          dispatch(decrementTask({
+            ...task, 
+            count: task.count - 1,
+            status: ETaskStatus.suspense, 
+            startPauseTime: 0, 
+            startTaskTime: 0, 
+            timeLeft: task.timeTask, 
+            pomodoroStart: 0,
+            timeTask: task.timeTask
+          }))
         }
         dispatch(complitedPomodoroTask())
        

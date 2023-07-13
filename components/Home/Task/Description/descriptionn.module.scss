@@ -1,12 +1,21 @@
 .descr{
 
     margin-bottom: 25px;
+    @media all and (max-width: 576px) {
+        margin-bottom: 10px;
+    }
 
     &__title {
         color:  var(--color-text);
         font-size: 24px;
         font-weight: 700;
         line-height: 33px;
+
+        @media all and (max-width: 576px) {
+            font-size: 22px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
     }
 
     &__list {
@@ -18,12 +27,15 @@
             color:  var(--color-text);
             font-size: 16px;
             line-height: 33px;
-            
+
+            @media all and (max-width: 576px) {
+                font-size: 16px;
+                line-height: 28px;
+            }
 
             &::marker {
                 color: var(--marker-color);
             }
         }
-      
     }
 }

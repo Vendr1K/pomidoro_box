@@ -20,6 +20,9 @@
         transform: translateX(-50%);
         bottom: 100%;
         z-index: 100;
+        @media all and (max-width: 576px) {
+            left: 90%;
+        }
     }
     &::after {
         position: absolute;
@@ -32,6 +35,10 @@
         transform: translateX(-50%);
         bottom: 100%;
         z-index: 100;
+        
+        @media all and (max-width: 576px) {
+            left: 90%;
+        }
     }
 
     &__btn {
@@ -71,12 +78,19 @@
 
 .modal__remove_task {
     &__header{
+        text-align: center;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
         line-height: 17px;
         color: var(--color-text);
         margin-bottom: 25px;
+
+
+
+        @media all and (max-width: 576px) {
+            font-size: 22px;
+        }
     }
 
     &__btn_wrapper {

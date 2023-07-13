@@ -22,12 +22,17 @@
     border-radius: 7px;
     z-index: 1000;
 
-    @media all and (max-width: 1200px) {
-      padding: 45px;
-    }
+    // @media all and (max-width: 1200px) {
+    //   padding: 45px;
+    // }
 
     @media all and (max-width: 768px) {
       padding: 30px;
+    }
+
+    @media all and (max-width: 576px) {
+      padding: 20px;
+      min-width: 300px;
     }
 
     &__close {
@@ -46,15 +51,15 @@
       }
 
       @media all and (max-width: 1200px) {
-        top: 10px;
-        right: 10px;
-        font-size: 14px;
+        top: 15px;
+        right: 15px;
+        font-size: 16px;
       }
 
       @media all and (max-width: 768px) {
-        top: 5px;
-        right: 10px;
-        font-size: 12px;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
       }
       
     }

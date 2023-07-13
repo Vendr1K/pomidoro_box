@@ -13,7 +13,7 @@ export function Task({timer}: ITimerProps) {
 
 
   return (
-    <div>
+    <div className={styles.task_wrapper}>
         <Description/> 
         <CreateTask timer={timer}/>
     </div>
