@@ -52,7 +52,7 @@ export function Timer({timer}: ITimerProps) {
             timer.timer.status === ETimerStatus.pomodoro_on ||
             timer.timer.status === ETimerStatus.pomodoro_pause ||
             timer.timer.status === ETimerStatus.pomodoro_off 
-            ? `Помидор ${timer.timer.pomodoroCount}` : 'Перерыв'}</span>
+            ? `Помидор ${timer.timer.pomodoroCount - 1}` : 'Перерыв'}</span>
         </div>
         <div className={styles.timer__time_wrapper}>
             <div className={styles.timer__time_wrapper__time} style={timerStyles(timer.timer.status)}>
@@ -68,7 +68,7 @@ export function Timer({timer}: ITimerProps) {
             </button>
             </div>
            
-            <div className={styles.timer__time_wrapper__task}>{timer.task?.text ? `Задача ${timer.timer.pomodoroCount} - ${timer.task?.text}` : 'Добавьте задачу'}</div>
+            <div className={styles.timer__time_wrapper__task}>{timer.task?.text ? `Задача ${timer.timer.taskCount} - ${timer.task?.text}` : 'Добавьте задачу'}</div>
               {timer.timer.status === ETimerStatus.pomodoro_off && (
                 <div className={styles.timer__time_wrapper__buttons}>
                 <button  onClick={() => timer.actions.handleStart()} className={`${styles.timer__time_wrapper__button_start} ${styles.timer__time_wrapper__button} btn-reset btn-pomidoro`} disabled={timer.task ? false : true}>Старт</button>

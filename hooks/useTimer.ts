@@ -24,7 +24,8 @@ import {
   reviseTimeTask,
   changeStatus,
   changePause,
-  changeCount,
+  changePomodoroCount,
+  changeTaskCount,
   ITimer
 } from '@/redux/Reducers/timerPomodoroSlice';
 
@@ -59,7 +60,7 @@ export function useTimer() {
           status: ETaskStatus.task_on, 
         }))
       }
-      dispatch(changeCount({pomodoroCount: complitedTask.length + 1}))
+      dispatch(changeTaskCount({taskCount: complitedTask.length + 1}))
       startTimerTick()
     }
   
@@ -91,7 +92,7 @@ export function useTimer() {
           pomodoroStart: 0,
           timeTask: task.timeTask
         }))
-        dispatch(changeCount({pomodoroCount: complitedTask.length}))
+        dispatch(changeTaskCount({taskCount: complitedTask.length}))
       }else {
         dispatch(stopPomidoroTimer(timer.taskTime))
       }
@@ -204,7 +205,7 @@ export function useTimer() {
         taskTime: task?.timeTask, 
         startPause: task?.startPauseTime, 
         startTime: task?.startTaskTime,
-        count: complitedTask.length,
+        // count: complitedTask.length,
         currentPauseTime: task?.currentPauseTime
       }))
       // ??????
@@ -218,7 +219,7 @@ export function useTimer() {
           taskTime: task?.timeTask, 
           startPause: task?.startPauseTime, 
           startTime: task?.startTaskTime,
-          count: complitedTask.length,
+          // count: complitedTask.length,
           currentPauseTime: task?.currentPauseTime
         }))
     }
@@ -232,7 +233,7 @@ export function useTimer() {
       }
       if(task?.status === ETaskStatus.pause) {
         dispatch(pausePomidoroTImer(task.startPauseTime))
-        dispatch(changeCount({pomodoroCount: complitedTask.length + 1}))
+        dispatch(changeTaskCount({taskCount: complitedTask.length + 1}))
         dispatch(changeStatus({status: ETimerStatus.pomodoro_pause}))
       }
       // stopTimerTick()

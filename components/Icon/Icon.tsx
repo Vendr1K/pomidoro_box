@@ -12,6 +12,8 @@ import { Minus } from './Icons/Minus';
 import { Focus } from './Icons/Focus';
 import { TimePause } from './Icons/TimePause';
 import { Stops } from './Icons/Stops';
+import { SelectArrow } from './Icons/SelectArrow';
+import { TomatoStats } from './Icons/TomatoStats';
 
 export enum EIcons {
     tomato = 'Tomato',
@@ -27,6 +29,9 @@ export enum EIcons {
     focus = 'Focus',
     timePause = 'TimePause',
     stops = 'Stops',
+    selectArrow = 'SelectArrow',
+    tomatoStats = 'TomatoStats'
+
 }
 
 interface IIconProps {
@@ -103,8 +108,15 @@ export function Icon(props: IIconProps) {
             return(
                 <Stops {...props} width={width} height={height}/>
         );
-
-
+        
+        case EIcons.selectArrow:
+            return(
+                <SelectArrow {...props} width={width} height={height}/>
+        );
+        case EIcons.tomatoStats:
+            return(
+                <TomatoStats {...props} width={width} height={height}/>
+        );
            
 
         default: 

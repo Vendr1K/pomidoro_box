@@ -18,7 +18,6 @@ export interface ITimer {
     taskTime: number,
     taskTimeLeft: number,
     status: ETimerStatus,
-    pomodoroCount: number,
     currentPauseTime: number,
     allPauseTime: number,
     pomodoroTime: number,
@@ -26,6 +25,8 @@ export interface ITimer {
     pomodoroPauseStart: number,
     shortPause: number,
     longPause: number
+    pomodoroCount: number,
+    taskCount: number,
 
 }
 
@@ -34,7 +35,6 @@ const initialState: ITimer = {
     taskTime: defaultTaskTime,
     taskTimeLeft: defaultTaskTime,
     status: ETimerStatus.pomodoro_off,
-    pomodoroCount: 0,
     currentPauseTime: 0,
     allPauseTime: 0,
     pomodoroTime: 0,
@@ -42,6 +42,8 @@ const initialState: ITimer = {
     pomodoroPauseStart: 0,
     shortPause: 5 * 60,
     longPause: 25 * 60, 
+    pomodoroCount: 1,
+    taskCount: 0,
 }
 
 
@@ -108,6 +110,7 @@ export const timerPomodoroReducer = createSlice({
         'complited': (state) => ({
             ...state,
             // pomodoroCount: state.pomodoroCount + 1,
+            pomodoroCount: state.pomodoroCount + 1,
             startTime: Date.now(),
             pomodoroTime: state.pomodoroTime + state.currentPauseTime + Math.round((Date.now() - state.pomodoroStart) / 1000),
             
@@ -178,9 +181,14 @@ export const timerPomodoroReducer = createSlice({
             status: action.payload.status
         }),
 
-        'changeCount': (state, action) => ({
+        'changePomodoroCount': (state, action) => ({
             ...state,
             pomodoroCount: action.payload.pomodoroCount
+        }),
+
+        'changeTaskCount': (state, action) => ({
+            ...state,
+            taskCount: action.payload.taskCount
         }),
 
 
@@ -214,7 +222,8 @@ export const {
     'reviseTimeTask': reviseTimeTask,
     'changeStatus' : changeStatus,
     'changePause' : changePause,
-    'changeCount': changeCount,
+    'changePomodoroCount': changePomodoroCount,
+    'changeTaskCount': changeTaskCount,
     'reviceShortPauseTime' :  reviceShortPauseTime,
     'reviceLongPauseTime' :  reviceLongPauseTime,
 

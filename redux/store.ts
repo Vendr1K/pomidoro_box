@@ -3,6 +3,7 @@ import tasksReducer from './Reducers/taskSlice'
 import currentTaskReducer from './Reducers/currentTask'
 import timerReducer from './Reducers/timerPomodoroSlice'
 import configTimerReducer from './Reducers/timerSettigs'
+import statisticReducer from './Reducers/statisticSlice'
 // const rootReducer =  combineReducers({
 //     counter: counterReducer,
 //     tasks: tasksReducer,
@@ -14,7 +15,8 @@ export const setupStore = configureStore({
     tasks: tasksReducer,
     currentTask: currentTaskReducer,
     timer: timerReducer,
-    settings: configTimerReducer
+    settings: configTimerReducer,
+    statistics: statisticReducer,
 },
   // devTools: process.env.NODE_ENV !== "production",
 });
