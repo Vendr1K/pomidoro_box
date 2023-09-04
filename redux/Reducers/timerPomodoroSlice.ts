@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import React from 'react'
 
-const defaultTaskTime = 25 * 60
-const defaultShortBreakTime = 5 * 60 
-const defaultLongBreakTime = 25 * 60
+export const defaultTaskTime = 25 * 60
+export const defaultShortBreakTime = 5 * 60 
+export const defaultLongBreakTime = 25 * 60
 
 export enum ETimerStatus {
     pomodoro_off,

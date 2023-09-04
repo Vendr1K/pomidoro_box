@@ -6,31 +6,79 @@
     gap: 32px;
     margin-bottom: 32px;
 
+    @media all and (max-width: 976px) {
+        height: auto;
+     }
+
     &__left {
         
         grid-column: 1 / span 3;
+
+        @media all and (max-width: 976px) {
+            grid-column: 1 / span 12;
+            grid-template-columns: repeat(3, 1fr);
+        }
         
     }
 
     &__right{
         background-color: var(--gray-color);
         grid-column:  4/ span 9;
+
+
+        @media all and (max-width: 976px) {
+            grid-column: 1 / span 12;
+        }
+        
     
     }
 }
 
 .days_active {
     display: grid;
-    gap: 16px;
+    gap: 32px;
 
-    grid-template-rows: repeat(8, 1fr);
+    @media all and (max-width: 440px) {
+        gap: 15px
+    }
 
+    
+
+    grid-template-rows: repeat(7, 1fr);
+
+
+    @media all and (max-width: 976px) {
+        grid-template-rows: none;  
+        row-gap: normal;
+    }
+
+    @media all and (max-width: 440px) {
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 15px;
+    }
+    &__tomato__icon {
+        @media all and (max-width: 976px) {
+            width: 45px;
+            height: 45px;
+        }
+    }
+   
 
     &__top {
         width: 100%;
-        grid-row: 1 / span 5;
+        grid-row: 1 / span 4;
         padding: 25px;
         background-color: var(--gray-color);
+
+        @media all and (max-width: 976px) {
+            grid-row: none;
+            grid-column: 1 / span 2;
+        }
+
+        @media all and (max-width: 440px) {
+            grid-row: 1/ span 1;
+            grid-column: 1 / span 3;
+        }
         
         &__day {
             color: var(--color-tex);
@@ -56,10 +104,20 @@
     
     &__bottom {
         width: 100%;
-        grid-row: 6 / span 3;
+        grid-row: 5 / span 3;
         background-color: var(--gray-color);
         position: relative;
 
+        @media all and (max-width: 976px) {
+            grid-row: none;
+            grid-column: 3 / span 1;
+        }
+
+        @media all and (max-width: 440px) {
+            grid-row: 2/ span 1;
+            grid-column: 1 / span 3;
+        }
+        
         &__big_tomato {
             height: 100%;
             width: 100%;
@@ -108,6 +166,16 @@
                 font-style: normal;
                 font-weight: 700;
                 line-height: 33px;
+
+                @media all and (max-width: 768px) {
+                    padding: 9px 10px;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 28px;
+                }
+
+          
             }
         }
     }

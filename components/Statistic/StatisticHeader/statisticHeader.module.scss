@@ -4,13 +4,39 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    @media all and (max-width: 576px) {
+        flex-direction: column;
+        // min-width: 320px;
+        // row-gap: normal;
+    }
+
+    &__title {
+
+        @media all and (max-width: 576px) {
+            margin-bottom: 15px;
+        }
+
+    }
 }
 
 .select {
     position: relative;
     display: grid;
     min-width: 370px;
-    // box-shadow: 0px 10px 63px 0px rgba(0, 0, 0, .07);
+    @media all and (max-width: 976px) {
+        min-width: 320px;
+        // row-gap: normal;
+    }
+
+    @media all and (max-width: 576px) {
+        width: 100%;
+        min-width: auto;
+        
+        // flex-direction: column;
+        // min-width: 320px;
+        // row-gap: normal;
+    }
 
     &__list{
         position: absolute;

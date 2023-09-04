@@ -47,7 +47,6 @@ export function TimerParams({task, onClose}: Props ) {
     }
   }
 
-
   const handleReset = () => {
     if (task)
     {  
@@ -59,12 +58,32 @@ export function TimerParams({task, onClose}: Props ) {
       } )),
       dispath(reviceShortPauseTime(settings.shortBreakTime))
       dispath(reviceLongPauseTime(settings.longBreakTime))
-      onClose()
-    } else {
+    } 
+    else {
+      
       dispath(reset()),
       onClose()
     }
   }
+
+  // const handleReset = () => {
+  //   if (task)
+  //   {  
+  //     dispath(reset()),
+  //     dispath(timeLeftTask ({
+  //     ...task,
+  //     timeTask: settings.taskTime,
+  //     timeLeft: settings.taskTime
+  //     } )),
+  //     dispath(reviceShortPauseTime(settings.shortBreakTime))
+  //     dispath(reviceLongPauseTime(settings.longBreakTime))
+  //     onClose()
+  //   } else {
+      
+  //     dispath(reset()),
+  //     onClose()
+  //   }
+  // }
 
 
   return (

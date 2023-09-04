@@ -9,9 +9,6 @@ interface ITimerProps {
 }
 
 export function Task({timer}: ITimerProps) {
-  // console.log(timer, 'timerTask')
-
-
   return (
     <div className={styles.task_wrapper}>
         <Description/> 

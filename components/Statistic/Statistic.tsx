@@ -1,16 +1,13 @@
-import React from 'react'
-import { StatisticFooter } from './StatisticFooter/StatisticFooter'
-import { StatisticHeader } from './StatisticHeader/StatisticHeader'
+import React, { useEffect } from 'react';
+import { StatisticFooter } from './StatisticFooter/StatisticFooter';
+import { StatisticHeader } from './StatisticHeader/StatisticHeader';
+import { StatisticMain } from './StatisticMain/StatisticMain';
 
-
-import styles from './statistic.module.scss'
-import { StatisticMain } from './StatisticMain/StatisticMain'
+import styles from './statistic.module.scss';
 
 export  function Statistic() {
-  
   return (
     <div className={styles.statistic}>
-      <h2 style={{textAlign: 'center', fontSize: '36px'}}>IN DEV</h2>
       <StatisticHeader/>
       <StatisticMain/>
       <StatisticFooter/>

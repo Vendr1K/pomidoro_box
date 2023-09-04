@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { ETimerStatus } from '@/redux/Reducers/timerPomodoroSlice';
 import { timerText } from '@/utils/timerText';
 import { EIcons, Icon } from '@/components/Icon/Icon';
 import Modal from '@/components/Modal/Modal';
 import { TimerParams } from './TimerParams/TimerParams';
-import styles from './timer.module.scss'
 import { ITimerHook } from '../Home';
+
+import styles from './timer.module.scss';
 
 function headerStyles(status: ETimerStatus): React.CSSProperties {
   switch(status) {

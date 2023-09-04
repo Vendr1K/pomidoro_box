@@ -1,3 +1,7 @@
 .statistic {
     padding: 80px 0;
+
+    @media all and (max-width: 576px) {
+        padding: 25px 0;
+    }
 }

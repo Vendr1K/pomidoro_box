@@ -40,19 +40,16 @@ export function useTimer() {
     const task = tasks.find(task => task.id === currentTask.id)
     const timer: ITimer = useAppSelector(state => state.timer)
 
-    const timerId = useRef<number | null>(null);
-    // const timerId = useTestRef().testRef
-  
+    const timerId = useRef<number | null>(0);
 
     function startTimerTick() {
-      timerId.current  = window.setInterval(() => dispatch(tickTimer()), 1000) 
+      timerId.current = window.setInterval(() => dispatch(tickTimer()), 1000)
     }
   
     function stopTimerTick() {
-      if(timerId.current === null) {
-        return
-      }
+      if(timerId.current === null) return
       window.clearInterval(timerId.current)
+      console.log(timerId.current)
     }
 
     const handleStart = () => {
@@ -85,11 +82,7 @@ export function useTimer() {
     }
 
     const handleStop = (count = true) => {    
-      stopTimerTick()
-      // console.log('first')
       if (timer.status === ETimerStatus.pomodoro_off) return
-
-      dispatch(stopPomidoroTimer(timer.taskTime))
       if(task) {
         dispatch(stopPomidoroTimer(task.timeTask))
         dispatch(timeLeftTask({
@@ -102,36 +95,18 @@ export function useTimer() {
           timeTask: task.timeTask
         }))
         dispatch(changeTaskCount({taskCount: complitedTask.length}))
+      }else {
+        dispatch(stopPomidoroTimer(timer.taskTime))
       }
       // stats>>>>>>>>>>>
-      // dispatch(stopPomidoroTimer())
       dispatch(
         updateStats({
           pomodorosStops: count ? 1 : 0,
         })
       )
       dispatch(saveStats())
-      
-      // console.log('dsadasasdsadadsasds')
-    }
-
-    const handleStopAfterChangeURL = () => {    
       stopTimerTick()
-      dispatch(stopPomidoroTimer(timer.taskTime))
-      if(task) {
-        dispatch(timeLeftTask({
-          ...task, 
-          status: ETaskStatus.suspense, 
-          startPauseTime: 0, 
-          startTaskTime: 0, 
-          timeLeft: task.timeTask, 
-          pomodoroStart: 0,
-          timeTask: task.timeTask
-        }))
-        dispatch(changeTaskCount({taskCount: complitedTask.length}))
-      }
     }
-    
     
     const changeCurrentTaskUseTimer = () => {
       if(timer.status === ETimerStatus.pomodoro_on  ) {
@@ -254,7 +229,7 @@ export function useTimer() {
     }
     
     const revice = () => {
-      // console.log(task, 'task')
+      console.log(task, 'task')
       dispatch(reviseTimeTask({
         timeLeft: task?.timeLeft, 
         taskTime: task?.timeTask, 
@@ -332,19 +307,15 @@ export function useTimer() {
     }, [tasks.length, task])
 
     useEffect(() => {
-      return () => {
-        handleStopAfterChangeURL();
-      }
+      dispatch(loadStats())
+      dispatch(saveStats())
     }, [])
 
-
-
-    // useEffect(() => {
-    //   console.log(timerId, 'in')
-    // })
+    useEffect(() => {
+      console.log(timerId)
+    })
 
   return {
-    timerId,
     task,
     timer,
     actions: {

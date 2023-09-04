@@ -8,6 +8,15 @@ import './globals.css'
 
 // const inter = Inter({ subsets: ['latin'] })
 
+import React, {useRef} from 'react'
+
+// export function useTestRef() {
+//     const testRef = useRef<number | null>(null)
+//   return {
+//     testRef
+//     }
+// }
+
 
 export const metadata: Metadata = {
   title: 'Pomidoro box',

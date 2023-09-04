@@ -8,9 +8,17 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 32px;
 
+        @media all and (max-width: 976px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
         &__item {
             padding: 25px;
             background-color: var(--gray-color);
+
+            @media all and (max-width: 1200px) {
+                padding: 15px;
+            }
 
             &__wrapper{
                 display: flex;
@@ -38,10 +46,44 @@
                         font-style: normal;
                         font-weight: 400;
                         line-height: normal;
+
+                        @media all and (max-width: 1200px) { 
+                            font-size: 32px;
+                        }
                     }
                 }
             }
             
         }
     }
+
+
+    &__iconFocus,
+    &__iconPause,
+    &__iconStop {
+        @media all and (max-width: 1200px) {
+            width: 80px;
+            height: 80px;
+        }
+
+      }
+    
+
+
+   
+
+    &__iconFocus.active path {
+        stroke: #FFAE35;
+    }
+
+    &__iconPause.active path {
+        stroke: #9C97D7;
+    }
+
+    &__iconStop.active path {
+        stroke: #7FC2D7;
+    }
+ 
 }
+
+
