@@ -1,13 +1,12 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     box-shadow: 0px 10px 63px 0px rgba(0, 0, 0, 0.07);
-    height: 70px;
     background-color: var(--color-white);
-    // position: fixed;
-    // bottom: 0;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // width: 100%;
+  
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 70px;
+
+    }
 }

@@ -1,16 +1,14 @@
 "use client";
-import React, { useEffect } from 'react'
-import useChart from '@/hooks/useChart'
+import React, { useEffect } from 'react';
+import useChart from '@/hooks/useChart';
 import { defaultTaskTime } from '@/redux/Reducers/timerPomodoroSlice';
 import { changeDay } from '@/redux/Reducers/statisticSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/reduxHook';
 
-import styles from './chart.module.scss'
+import styles from './chart.module.scss';
 
 export function Chart() {
     const { axisStep, axisData, barData } = useChart();
-    // console.log(axisStep)
-    // console.log(barData)
     const day = useAppSelector((state) => state.statistics.day);
     const dispatch = useAppDispatch();
 

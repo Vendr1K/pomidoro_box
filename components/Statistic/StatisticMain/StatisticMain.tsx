@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect } from 'react'
-import { EIcons, Icon } from '@/components/Icon/Icon'
-import { Chart } from './Chart/Chart'
+import React, { useEffect } from 'react';
+import { EIcons, Icon } from '@/components/Icon/Icon';
+import { Chart } from './Chart/Chart';
 import { useAppDispatch, useAppSelector } from '@/redux/reduxHook';
 import {
     loadStats,

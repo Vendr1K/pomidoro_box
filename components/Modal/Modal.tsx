@@ -16,7 +16,7 @@ export default function Modal({ onClose, children }: Props) {
         if(event.target instanceof Node && refClose.current?.contains(event.target)) {
             onClose?.()
         }
-
+        
         if(event.target instanceof Node && !ref.current?.contains(event.target)) {
             onClose?.()
         }

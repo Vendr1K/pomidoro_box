@@ -1,21 +1,11 @@
-import Footer from "@/components/Footer/Footer"
-import Header from "@/components/Header/Header"
-import { Metadata } from "next"
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import { Metadata } from "next";
 import { Providers } from "@/redux/provider";
+
 import './globals.css'
 // import { Inter } from 'next/font/google'
-
-
 // const inter = Inter({ subsets: ['latin'] })
-
-import React, {useRef} from 'react'
-
-// export function useTestRef() {
-//     const testRef = useRef<number | null>(null)
-//   return {
-//     testRef
-//     }
-// }
 
 
 export const metadata: Metadata = {
@@ -33,7 +23,6 @@ export default function RootLayout({
         <body>
           <Header/>
             <div className="container">
-            
               {children}
             </div>
             <div id="modal_root" />

@@ -1,5 +1,6 @@
 .statistic {
     padding: 80px 0;
+    min-height: calc(100vh - 70px - 70px);
 
     @media all and (max-width: 576px) {
         padding: 25px 0;

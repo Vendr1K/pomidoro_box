@@ -1,23 +1,22 @@
 "use client";
+import React, { useState, FormEvent } from 'react';
 import { addTask, selectAllTasks , ETaskStatus} from '@/redux/Reducers/taskSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/reduxHook';
 import timeToText from '@/utils/timeToText';
-import React, { useState, FormEvent, useMemo } from 'react'
 import { TaskList } from './TaskList';
-import styles from './createTask.module.scss'
 import { ITimerHook } from '../../Home';
+
+import styles from './createTask.module.scss';
 
 interface ITimerProps {
   timer: ITimerHook
 }
 
-
 export  function CreateTask({timer}: ITimerProps) {
-  // console.log(timer,' timerCreateTask')
   const tasks = useAppSelector(selectAllTasks);
   const dispatch = useAppDispatch();
 
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()

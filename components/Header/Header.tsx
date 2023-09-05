@@ -8,9 +8,10 @@ export default function Header() {
 
 
   return (
-    <header className={`container ${styles.header}`}>
+    <header className={`${styles.header}`}>
         
-        <Link  className={styles.header__wrapper_left} href='/'>
+      <div className={`container  ${styles.header__container}`}>
+      <Link  className={styles.header__wrapper_left} href='/'>
             <Icon name={EIcons.tomato} className={styles.header__wrapper_left__icon}/>
             <h1 className={styles.header__wrapper_left__title}>Pomodoro_box </h1>
         </Link>
@@ -18,6 +19,7 @@ export default function Header() {
             <Icon name={EIcons.stats} className={styles.header__wrapper_right__icon} />
             <span className={styles.header__wrapper_right__descr}>Статистика</span>
         </Link>
+      </div>
     </header>
   )
 }

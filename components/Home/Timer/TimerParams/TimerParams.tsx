@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import { 
   reset,
   incrementTaskTime,
@@ -13,14 +14,13 @@ import {
   reviceLongPauseTime,
   reviceShortPauseTime
 } from '@/redux/Reducers/timerPomodoroSlice';
-import{  timeLeftTask, TTask,
-} from '@/redux/Reducers/taskSlice';
-import { useAppDispatch, useAppSelector } from '@/redux/reduxHook'
+import{  timeLeftTask, TTask } from '@/redux/Reducers/taskSlice';
+import {  useAppSelector } from '@/redux/reduxHook';
 import { timerText } from '@/utils/timerText';
-import React from 'react'
 import { useDispatch } from 'react-redux';
-import styles from './timerParams.module.scss'
 import { EIcons, Icon } from '@/components/Icon/Icon';
+
+import styles from './timerParams.module.scss';
 
 type Props = {
   onClose: () => void,
@@ -60,31 +60,10 @@ export function TimerParams({task, onClose}: Props ) {
       dispath(reviceLongPauseTime(settings.longBreakTime))
     } 
     else {
-      
       dispath(reset()),
       onClose()
     }
   }
-
-  // const handleReset = () => {
-  //   if (task)
-  //   {  
-  //     dispath(reset()),
-  //     dispath(timeLeftTask ({
-  //     ...task,
-  //     timeTask: settings.taskTime,
-  //     timeLeft: settings.taskTime
-  //     } )),
-  //     dispath(reviceShortPauseTime(settings.shortBreakTime))
-  //     dispath(reviceLongPauseTime(settings.longBreakTime))
-  //     onClose()
-  //   } else {
-      
-  //     dispath(reset()),
-  //     onClose()
-  //   }
-  // }
-
 
   return (
     <div className={styles.timer_params}>
@@ -158,7 +137,6 @@ export function TimerParams({task, onClose}: Props ) {
         </div>
       </div>
       
-
       <div className={styles.timer_params__buttons}>
         <button className={`${styles.timer_params__buttons__ok} btn-reset btn-pomidoro`} onClick={() => handleOk()}>Применить</button>
         <button className={`${styles.timer_params__buttons__reset} btn-reset btn-pomidoro`} onClick={() => handleReset()}>По умолчанию</button>

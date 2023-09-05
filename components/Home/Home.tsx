@@ -27,11 +27,8 @@ export interface ITimerHook {
     };
 }
 
-
-
 export default function Home({ children }: Props) {
   const timer: ITimerHook = useTimer()
-
 
   return (
     <div className={styles.home}>

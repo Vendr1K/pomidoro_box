@@ -43,7 +43,6 @@ interface ITimerProps {
 export function Timer({timer}: ITimerProps) {
   const [removeModalOpen, setRemoveModal] = useState(false)
 
-
   return (
     <div className={styles.timer}>
       <div className={styles.timer__task__wrapper}>
